@@ -1,0 +1,223 @@
+<template>
+  <div class="projects-page mx-2 mx-md-0">
+    <div class="d-flex justify-center mt-16 mb-12" style="font-size: 3rem;">
+      <div
+        class="animate__animated animate__bounceInUp"
+        style="border-bottom: 4px solid #2196F3;"
+      >
+        Projects
+      </div>
+    </div>
+
+    <v-row no-gutters>
+      <v-col cols="12" class="mx-6 my-3">
+        Some projects I have made...
+      </v-col>
+    </v-row>
+
+    <v-row no-gutters>
+      <v-col
+        cols="12"
+        :sm="projects[item].sm"
+        :md="projects[item].md"
+        v-for="item in projectIds"
+        :key="item"
+        class="pa-1"
+      >
+        <v-hover
+          v-slot="{ hover }"
+          close-delay="1000"
+          :style="
+            `background: url(&quot;${projects[item].image}&quot;) rgba(0,0,0,0.2); background-blend-mode: overlay; background-size: cover; background-position: center; background-repeat: no-repeat;`
+          "
+        >
+          <v-card
+            tile
+            height="300"
+            @mouseleave="handleMouseLeave(item)"
+            @mouseenter="handleMouseEnter(item)"
+          >
+            <v-overlay color="blue" absolute :value="hover">
+              <div class="d-flex flex-column text-center">
+                <div
+                  class="font-weight-bold animate__animated"
+                  :class="{
+                    animate__bounceIn: hover,
+                    animate__bounceOut: projects[item].isLeaving
+                  }"
+                  style="font-size: 1.5rem;"
+                >
+                  {{ projects[item].name }}
+                </div>
+
+                <div
+                  class="mb-12 animate__animated"
+                  :class="{
+                    animate__bounceIn: hover,
+                    animate__bounceOut: projects[item].isLeaving
+                  }"
+                >
+                  {{ projects[item].tech }}
+                </div>
+
+                <div
+                  class="mt-12 animate__animated"
+                  :class="{
+                    animate__bounceIn: hover,
+                    animate__bounceOut: projects[item].isLeaving
+                  }"
+                >
+                  <v-btn
+                    v-if="projects[item].link"
+                    small
+                    outlined
+                    tile
+                    :href="projects[item].link"
+                    target="_blank"
+                    ><b>Visit site</b>
+                    <v-icon right x-small>fas fa-external-link-alt </v-icon>
+                  </v-btn>
+                </div>
+              </div>
+            </v-overlay>
+          </v-card>
+        </v-hover>
+      </v-col>
+    </v-row>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ProjectsPage",
+  data: () => ({
+    overlay: false,
+    projects: {
+      geocase: {
+        name: "GeoCASe 2.0",
+        image: require("@/assets/projects/geocase.png"),
+        tech: "Todo: Keywords",
+        link: "https://geocase.geocollections.info",
+        isLeaving: false,
+        sm: 6,
+        md: 4
+      },
+      geocaseApi: {
+        name: "GeoCASe API",
+        image: require("@/assets/projects/geocase-api.png"),
+        tech: "Todo: Keywords",
+        link: "https://geocase-api.geocollections.info",
+        isLeaving: false,
+        sm: 6,
+        md: 4
+      },
+      turba: {
+        name: "TURBA",
+        image: require("@/assets/projects/turba.png"),
+        tech: "Todo: Keywords",
+        link: "https://turba.geoloogia.info",
+        isLeaving: false,
+        sm: 6,
+        md: 4
+      },
+      sarvDoi: {
+        name: "SARV·DOI",
+        image: require("@/assets/projects/doi.png"),
+        tech: "Todo: Keywords",
+        link: "https://doi.geocollections.info",
+        isLeaving: false,
+        sm: 6,
+        md: 7
+      },
+      sarvEdit: {
+        name: "SARV Data Management",
+        image: require("@/assets/projects/sarv.png"),
+        tech: "Todo: Keywords",
+        link: "https://edit.geocollections.info",
+        isLeaving: false,
+        sm: 6,
+        md: 5
+      },
+      geocollections: {
+        name: "Geocollections",
+        image: require("@/assets/projects/geocollections.png"),
+        tech: "Todo: Keywords",
+        link: "https://geocollections.info",
+        isLeaving: false,
+        sm: 6,
+        md: 5
+      },
+      geocollectionsApi: {
+        name: "Geocollections API",
+        image: require("@/assets/projects/geocollectionsApi.png"),
+        tech: "Todo: Keywords",
+        link: "https://api.geocollections.info",
+        isLeaving: false,
+        sm: 6,
+        md: 7
+      },
+      eurocore: {
+        name: "EuroCore",
+        image: require("@/assets/projects/eurocore.png"),
+        tech: "Todo: Keywords",
+        link: "https://eurocore.rocks",
+        isLeaving: false,
+        sm: 6,
+        md: 4
+      },
+      chuckNorrisVue: {
+        name: "Chuck Norris Facts (Vue)",
+        image: require("@/assets/projects/chuckNorrisVue.jpg"),
+        tech: "Todo: Keywords",
+        link: null,
+        isLeaving: false,
+        sm: 6,
+        md: 4
+      },
+      readySteadyGo: {
+        name: "Ready Steady Go",
+        image: require("@/assets/projects/randomStart.png"),
+        tech: "Todo: Keywords",
+        link: null,
+        isLeaving: false,
+        sm: 6,
+        md: 4
+      },
+      chuckNorrisReact: {
+        name: "Chuck Norris Facts (React)",
+        image: require("@/assets/projects/chuckNorrisReact.png"),
+        tech: "Todo: Keywords",
+        link: null,
+        isLeaving: false,
+        sm: 12,
+        md: 12
+      }
+    },
+    projectIds: [
+      "geocase",
+      "geocaseApi",
+      "turba",
+      "sarvDoi",
+      "sarvEdit",
+      "geocollections",
+      "geocollectionsApi",
+      "eurocore",
+      "chuckNorrisVue",
+      "readySteadyGo",
+      "chuckNorrisReact"
+    ]
+  }),
+  methods: {
+    handleMouseLeave(id) {
+      if (!this.projects[id].isLeaving)
+        setTimeout(() => (this.projects[id].isLeaving = true), 400);
+    },
+
+    handleMouseEnter(id) {
+      if (this.projects[id].isLeaving) this.projects[id].isLeaving = false;
+    }
+  }
+};
+</script>
+
+<style scoped></style>
