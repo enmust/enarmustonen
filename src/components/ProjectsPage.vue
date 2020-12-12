@@ -170,7 +170,7 @@ export default {
       eurocore: {
         name: "EuroCore",
         image: require("@/assets/projects/eurocore.jpg"),
-        tech: "Todo: Keywords",
+        tech: "Portal which provides data from drill cores",
         link: "https://eurocore.rocks",
         isLeaving: false,
         sm: 6,
@@ -188,7 +188,7 @@ export default {
       readySteadyGo: {
         name: "Ready Steady Go",
         image: require("@/assets/projects/randomStart.png"),
-        tech: "Todo: Keywords",
+        tech: "Fun app which was intended for arm wrestling",
         link: null,
         isLeaving: false,
         sm: 6,
