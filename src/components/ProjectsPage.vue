@@ -180,7 +180,7 @@ export default {
         name: "Chuck Norris Facts (Vue)",
         image: require("@/assets/projects/chuckNorrisVue.jpg"),
         tech: "Made to test Vue",
-        link: "https://re-sourcing.eu/chuck-norris",
+        link: "https://enarmustonen.eu/chuck-norris",
         isLeaving: false,
         sm: 6,
         md: 4
@@ -198,7 +198,7 @@ export default {
         name: "Chuck Norris Facts (React)",
         image: require("@/assets/projects/chuckNorrisReact.jpg"),
         tech: "Made to test React",
-        link: "https://re-sourcing.eu/chuck-norris-react",
+        link: "https://enarmustonen.eu/chuck-norris-react",
         isLeaving: false,
         sm: 12,
         md: 6
