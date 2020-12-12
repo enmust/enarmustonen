@@ -88,7 +88,8 @@
     <v-row no-gutters>
       <v-col cols="12" class="px-1 my-3">
         <div style="max-width: 600px;">
-          That's not all, there are many more, for example some project have included Raspberry Pi-s, Arduino boards etc.
+          That's not all, there are many more, for example some project have
+          included Raspberry Pi-s, Arduino boards etc.
         </div>
       </v-col>
     </v-row>

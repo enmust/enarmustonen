@@ -64,7 +64,9 @@
       <div class="d-flex flex-column flex-sm-row flex-md-column my-14 my-md-0">
         <div class="d-flex flex-column flex-sm-row justify-space-around my-2">
           <v-hover v-slot="{ hover }" close-delay="800">
-            <div class="mx-2 my-2 my-sm-0 text-center animate__animated animate__zoomIn">
+            <div
+              class="mx-2 my-2 my-sm-0 text-center animate__animated animate__zoomIn"
+            >
               <div class="d-flex justify-center">
                 <v-card
                   :class="{ 'animate__animated animate__wobble': hover }"
@@ -86,7 +88,9 @@
           </v-hover>
 
           <v-hover v-slot="{ hover }" close-delay="800">
-            <div class="mx-2 my-2 my-sm-0 text-center animate__animated animate__zoomIn">
+            <div
+              class="mx-2 my-2 my-sm-0 text-center animate__animated animate__zoomIn"
+            >
               <div class="d-flex justify-center">
                 <v-card
                   :class="{ 'animate__animated animate__wobble': hover }"
@@ -101,14 +105,18 @@
               <div class="font-weight-bold" style="font-size: 1.5rem;">
                 Dynamic
               </div>
-              <div class="mx-auto" style="max-width: 225px;">Web pages will come alive</div>
+              <div class="mx-auto" style="max-width: 225px;">
+                Web pages will come alive
+              </div>
             </div>
           </v-hover>
         </div>
 
         <div class="d-flex flex-column flex-sm-row justify-space-around my-2">
           <v-hover v-slot="{ hover }" close-delay="800">
-            <div class="mx-2 my-2 my-sm-0 text-center animate__animated animate__zoomIn">
+            <div
+              class="mx-2 my-2 my-sm-0 text-center animate__animated animate__zoomIn"
+            >
               <div class="d-flex justify-center">
                 <v-card
                   :class="{ 'animate__animated animate__wobble': hover }"
@@ -130,7 +138,9 @@
           </v-hover>
 
           <v-hover v-slot="{ hover }" close-delay="800">
-            <div class="mx-2 my-2 my-sm-0 text-center animate__animated animate__zoomIn">
+            <div
+              class="mx-2 my-2 my-sm-0 text-center animate__animated animate__zoomIn"
+            >
               <div class="d-flex justify-center">
                 <v-card
                   :class="{ 'animate__animated animate__wobble': hover }"
