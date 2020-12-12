@@ -49,6 +49,8 @@ jobs:
           key: << pipeline.parameters.package-version >>-repo-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
           key: << pipeline.parameters.package-version >>-bundle-{{ .Environment.CIRCLE_SHA1 }}
+      - git config --global user.email {{ .Environment.GIT_AUTHOR_EMAIL }}
+      - git config --global user.name {{ .Environment.GIT_AUTHOR_NAME }}
       - run:
           name: Run deploy.sh
           command: sh deploy.sh
