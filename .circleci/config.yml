@@ -1,0 +1,45 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+# Version number for caching (needs updating after dependency install/update/change etc.)
+parameters:
+  package-version:
+    type: string
+    default: "v1.0.0"
+
+jobs:
+  checkout_code:
+    docker:
+      - image: circleci/node:lts
+    working_directory: ~/enmust/enarmustonen
+    steps:
+      - checkout
+      - save_cache:
+          key: << pipeline.parameters.package-version >>-repo-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ~/enmust/enarmustonen
+
+  deploy:
+    docker:
+      - image: circleci/node:lts
+    working_directory: ~/enmust/enarmustonen
+    steps:
+      - restore_cache:
+          key: << pipeline.parameters.package-version >>-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: << pipeline.parameters.package-version >>-bundle-{{ .Environment.CIRCLE_SHA1 }}
+      - run:
+          name: Run deploy.sh
+          command: sh deploy.sh
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - checkout_code
+      - deploy:
+          requires:
+            - checkout_code
+          filters:
+            branches:
+              only: master
