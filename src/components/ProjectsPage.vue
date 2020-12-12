@@ -201,7 +201,16 @@ export default {
         link: null,
         isLeaving: false,
         sm: 12,
-        md: 12
+        md: 6
+      },
+      resourcing: {
+        name: "RE-SOURCING",
+        image: require("@/assets/projects/resourcing.jpg.jpg"),
+        tech: "A global stakeholder platform for responsible sourcing",
+        link: null,
+        isLeaving: false,
+        sm: 12,
+        md: 6
       }
     },
     projectIds: [
@@ -215,7 +224,8 @@ export default {
       "eurocore",
       "chuckNorrisVue",
       "readySteadyGo",
-      "chuckNorrisReact"
+      "chuckNorrisReact",
+      "resourcing"
     ]
   }),
   methods: {
