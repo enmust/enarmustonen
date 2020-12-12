@@ -19,6 +19,27 @@ jobs:
           paths:
             - ~/enmust/enarmustonen
 
+  install:
+    docker:
+      - image: circleci/node:lts
+    working_directory: ~/genmust/enarmustonen
+    steps:
+      - restore_cache:
+          key: << pipeline.parameters.package-version >>-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: << pipeline.parameters.package-version >>-bundle-{{ .Environment.CIRCLE_SHA1 }}
+      - run:
+          name: Npm disabling progress bar and adding depth 0
+          command: npm set progress=false && npm config set depth 0
+      - run:
+          name: Installing packages
+          command: npm install
+      - save_cache:
+          key: << pipeline.parameters.package-version >>-bundle-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ./node_modules
+            - ./package-lock.json
+
   deploy:
     docker:
       - image: circleci/node:lts
@@ -37,9 +58,12 @@ workflows:
   build-and-deploy:
     jobs:
       - checkout_code
-      - deploy:
+      - install:
           requires:
             - checkout_code
+      - deploy:
+          requires:
+            - install
           filters:
             branches:
               only: master
