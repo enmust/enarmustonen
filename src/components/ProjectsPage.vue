@@ -10,7 +10,7 @@
     </div>
 
     <v-row no-gutters>
-      <v-col cols="12" class="mx-6 my-3">
+      <v-col cols="12" class="px-1 my-3">
         Some projects I have made...
       </v-col>
     </v-row>
@@ -51,7 +51,7 @@
                 </div>
 
                 <div
-                  class="mb-12 animate__animated"
+                  class="mb-12 animate__animated font-weight-medium"
                   :class="{
                     animate__bounceIn: hover,
                     animate__bounceOut: projects[item].isLeaving
@@ -84,6 +84,14 @@
         </v-hover>
       </v-col>
     </v-row>
+
+    <v-row no-gutters>
+      <v-col cols="12" class="px-1 my-3">
+        <div style="max-width: 600px;">
+          That's not all, there are many more, for example some project have included Raspberry Pi-s, Arduino boards etc.
+        </div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -95,8 +103,9 @@ export default {
     projects: {
       geocase: {
         name: "GeoCASe 2.0",
-        image: require("@/assets/projects/geocase.png"),
-        tech: "Todo: Keywords",
+        image: require("@/assets/projects/geocase.jpg"),
+        tech:
+          "Data network of geological collections from from different institutions",
         link: "https://geocase.geocollections.info",
         isLeaving: false,
         sm: 6,
@@ -105,7 +114,7 @@ export default {
       geocaseApi: {
         name: "GeoCASe API",
         image: require("@/assets/projects/geocase-api.png"),
-        tech: "Todo: Keywords",
+        tech: "Public API for the GeoCASe 2.0",
         link: "https://geocase-api.geocollections.info",
         isLeaving: false,
         sm: 6,
@@ -113,8 +122,8 @@ export default {
       },
       turba: {
         name: "TURBA",
-        image: require("@/assets/projects/turba.png"),
-        tech: "Todo: Keywords",
+        image: require("@/assets/projects/turba.jpg"),
+        tech: "Estonian peat studies database",
         link: "https://turba.geoloogia.info",
         isLeaving: false,
         sm: 6,
@@ -122,8 +131,9 @@ export default {
       },
       sarvDoi: {
         name: "SARV·DOI",
-        image: require("@/assets/projects/doi.png"),
-        tech: "Todo: Keywords",
+        image: require("@/assets/projects/doi.jpg"),
+        tech:
+          "Application to showcase articles, documents etc. which have an official DOI number",
         link: "https://doi.geocollections.info",
         isLeaving: false,
         sm: 6,
@@ -131,8 +141,8 @@ export default {
       },
       sarvEdit: {
         name: "SARV Data Management",
-        image: require("@/assets/projects/sarv.png"),
-        tech: "Todo: Keywords",
+        image: require("@/assets/projects/sarv.jpg"),
+        tech: "Geocollections Data Management, basically a CRUD app",
         link: "https://edit.geocollections.info",
         isLeaving: false,
         sm: 6,
@@ -140,8 +150,8 @@ export default {
       },
       geocollections: {
         name: "Geocollections",
-        image: require("@/assets/projects/geocollections.png"),
-        tech: "Todo: Keywords",
+        image: require("@/assets/projects/geocollections.jpg"),
+        tech: "Geoscience Collections of Estonia",
         link: "https://geocollections.info",
         isLeaving: false,
         sm: 6,
@@ -149,8 +159,8 @@ export default {
       },
       geocollectionsApi: {
         name: "Geocollections API",
-        image: require("@/assets/projects/geocollectionsApi.png"),
-        tech: "Todo: Keywords",
+        image: require("@/assets/projects/geocollectionsApi.jpg"),
+        tech: "Public Geocollections API which supports multiple applications",
         link: "https://api.geocollections.info",
         isLeaving: false,
         sm: 6,
@@ -158,7 +168,7 @@ export default {
       },
       eurocore: {
         name: "EuroCore",
-        image: require("@/assets/projects/eurocore.png"),
+        image: require("@/assets/projects/eurocore.jpg"),
         tech: "Todo: Keywords",
         link: "https://eurocore.rocks",
         isLeaving: false,
@@ -168,7 +178,7 @@ export default {
       chuckNorrisVue: {
         name: "Chuck Norris Facts (Vue)",
         image: require("@/assets/projects/chuckNorrisVue.jpg"),
-        tech: "Todo: Keywords",
+        tech: "Made to test Vue",
         link: null,
         isLeaving: false,
         sm: 6,
@@ -185,8 +195,8 @@ export default {
       },
       chuckNorrisReact: {
         name: "Chuck Norris Facts (React)",
-        image: require("@/assets/projects/chuckNorrisReact.png"),
-        tech: "Todo: Keywords",
+        image: require("@/assets/projects/chuckNorrisReact.jpg"),
+        tech: "Made to test React",
         link: null,
         isLeaving: false,
         sm: 12,

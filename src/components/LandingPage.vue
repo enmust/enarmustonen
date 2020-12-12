@@ -57,7 +57,7 @@ export default {
 }
 
 .small-font {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   transition: font-size 200ms ease-in;
 }
 </style>

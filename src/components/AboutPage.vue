@@ -51,6 +51,7 @@
                 large
                 color="blue"
                 class="mx-1"
+                :aria-label="btn.name"
               >
                 <v-icon>{{ btn.icon }}</v-icon>
               </v-btn>
@@ -158,7 +159,7 @@
         <v-hover v-slot="{ hover }" close-delay="800">
           <v-chip
             dark
-            class="ma-1 animate__animated"
+            class="ma-1 animate__animated font-weight-medium"
             color="blue"
             :class="{ animate__rollOut: hover, animate__rollIn: !hover }"
             >{{ entity }}</v-chip

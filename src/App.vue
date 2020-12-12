@@ -36,11 +36,7 @@ export default {
     AboutPage,
     NameToolbar,
     LandingPage
-  },
-
-  data: () => ({
-    //
-  })
+  }
 };
 </script>
 

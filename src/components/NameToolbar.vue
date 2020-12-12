@@ -15,6 +15,7 @@
           :key="btn.text"
           class="pa-2 toolbar-button hidden-xs-only"
           :class="btn.animateClass"
+          :aria-label="btn.text"
         >
           {{ btn.text }}
         </div>
