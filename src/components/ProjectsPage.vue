@@ -205,7 +205,7 @@ export default {
       },
       resourcing: {
         name: "RE-SOURCING",
-        image: require("@/assets/projects/resourcing.jpg.jpg"),
+        image: require("@/assets/projects/resourcing.jpg"),
         tech: "A global stakeholder platform for responsible sourcing",
         link: null,
         isLeaving: false,
